@@ -9,6 +9,8 @@
 Website for Bhoomi Chakki Atta, a chakki atta made from Premium Sharbati Wheat by Aarambh Manufacturers.
 Built with React, TypeScript, Vite and Tailwind CSS.
 
+**Live site:** <https://bhoomi-chakki-atta.onrender.com>
+
 ## Run it
 
 ```bash
