@@ -1,0 +1,33 @@
+name: Deployment
+
+on:
+  workflow_call:
+    inputs:
+      ref:
+        type: string
+        required: false
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Deployment
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          ref: ${{ inputs.ref || github.sha }}
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+      - run: npm ci
+      - run: npm run build
+      - name: Serve the built site and check its pages respond
+        run: |
+          npm run preview -- --port 4173 --strictPort > preview.log 2>&1 &
+          for i in $(seq 1 60); do curl -fs http://localhost:4173/ > /dev/null && break; sleep 1; done
+          for page in / /about /product /quality /partner /contact; do
+            curl -fs "http://localhost:4173$page" | grep -q '<div id="root">' || { cat preview.log; exit 1; }
+          done
