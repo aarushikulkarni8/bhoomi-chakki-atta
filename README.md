@@ -17,6 +17,10 @@ npm run dev
 npm run build
 ```
 
+## Hosting
+
+The site runs as a free static site on Render, using the settings in [render.yaml](render.yaml). Render does not redeploy automatically: after a change reaches `main`, start a manual deploy in the Render dashboard.
+
 ## Project layout
 
 - [src/pages](src/pages): Home, About, Product, Quality, Partner and Contact pages
@@ -24,7 +28,7 @@ npm run build
 - [src/data/company.ts](src/data/company.ts): contact details, navigation and FAQs
 - [src/assets](src/assets): product and lifestyle images (replace using the same filenames)
 
-The phone and WhatsApp number in this repository is a placeholder. Set the `VITE_PHONE` environment variable (10 digits, without +91) in Vercel, then redeploy. The number is visible to visitors of the published site.
+The phone and WhatsApp number in this repository is a placeholder. Set the `VITE_PHONE` environment variable (10 digits, without +91) in Render, then redeploy. The number is visible to visitors of the published site.
 
 ## Commit checklist
 

@@ -1,4 +1,4 @@
-// The real number is set as VITE_PHONE (10 digits) in Vercel. The repository only holds this placeholder.
+// The real number is set as VITE_PHONE (10 digits) in Render. The repository only holds this placeholder.
 const phone = import.meta.env.VITE_PHONE || '0000000000'
 
 export const company = {
