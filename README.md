@@ -24,7 +24,7 @@ npm run build
 - [src/data/company.ts](src/data/company.ts): contact details, navigation and FAQs
 - [src/assets](src/assets): product and lifestyle images (replace using the same filenames)
 
-The phone and WhatsApp numbers in this repository are placeholders. Put the real ones in `src/data/company.ts` before publishing the site.
+The phone and WhatsApp number in this repository is a placeholder. Set the `VITE_PHONE` environment variable (10 digits, without +91) in Vercel, then redeploy. The number is visible to visitors of the published site.
 
 ## Commit checklist
 
